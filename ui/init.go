@@ -1,15 +1,22 @@
 package ui
 
 import (
+	"html/template"
 	"log"
 	"matthewhope/groupie-tracker/services"
 )
 
 var (
 	IndexVM IndexViewModel
+	Tmpl    *template.Template
 )
 
 func init() {
+	var err error
+	Tmpl, err = template.ParseGlob("./templates/*.go.html")
+	if err != nil {
+		log.Fatal(err.Error())
+	}
 	artists, err := services.GetArtists()
 	if err != nil {
 		log.Fatal(err.Error())
