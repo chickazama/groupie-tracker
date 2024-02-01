@@ -1,6 +1,7 @@
 package services
 
 const (
-	baseUrl         = "https://groupietrackers.herokuapp.com/api"
-	artistsEndpoint = "/artists"
+	baseUrl           = "https://groupietrackers.herokuapp.com/api"
+	artistsEndpoint   = "/artists"
+	relationsEndpoint = "/relations"
 )
