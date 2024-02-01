@@ -1,10 +1,9 @@
 {{define "Profile"}}
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Groupie Tracker</title>
-    </head>
+    {{template "Head" .}}
     <body>
+        {{template "Navbar" .}}
         <main>
             {{template "Artist" .}}
         </main>
