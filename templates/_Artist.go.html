@@ -1,8 +1,50 @@
 {{define "Artist"}}
-<div class="artist">
-    <h1>{{.Data.Name}}</h1>
-    <h1>{{.Data.Image}}</h1>
-    <a href="/profile/{{.Prev}}" class="btn btn-primary">Previous</a>
-<a href="/profile/{{.Next}}" class="btn btn-primary">Next</a>
+<div class="artist container text-center">
+    <div class="row mb-2">
+        <span>
+            <a href="/profile/{{.Prev}}" class="btn btn-primary">Previous</a>
+            <a href="/profile/{{.Next}}" class="btn btn-primary">Next</a>
+        </span>
+    </div>
+    <div class="row mb-2">
+        <h1 class="display-1">{{.Data.Name}}</h1>
+    </div>
+    <div class="row mb-2 p-4">
+        <img src="{{.Data.Image}}" alt="{{.Data.Name}} Profile Photo" />
+    </div>
+    <div class="row mb-2">
+        <h3>Tour Dates</h3>
+        {{range $key, $value := .DatesLocations}}
+            <div>
+                <h1>{{$key}}</h1>
+                {{range $v := $value}}
+                    <h2>{{$v}}</h2>
+                {{end}}
+            </div>
+            <hr />
+        {{end}}
+    </div>
+    <div class="row mb-2">
+        <div>
+            <h3>Members</h3>
+            {{range .Data.Members}}
+                <h1>{{.}}</h1>
+            {{end}}
+        </div>
+    </div>
+    <div class="row mb-2">
+        <h3>Creation Date</h3>
+        <h1>{{.Data.CreationDate}}</h1>
+    </div>
+    <div class="row mb-2">
+        <h3>First Album</h3>
+        <h1>{{.Data.FirstAlbum}}</h1>
+    </div>
+    <div class="row mb-2">
+        <span>
+            <a href="/profile/{{.Prev}}" class="btn btn-primary">Previous</a>
+            <a href="/profile/{{.Next}}" class="btn btn-primary">Next</a>
+        </span>
+    </div>
 </div>
 {{end}}
