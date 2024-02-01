@@ -1,0 +1,15 @@
+{{define "Index"}}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Groupie Tracker</title>
+    </head>
+    <body>
+        <main>
+            {{range $a := .Artists}}
+            {{template "Artist" .}}
+            {{end}}
+        </main>
+    </body>
+</html>
+{{end}}
