@@ -11,11 +11,7 @@ type IndexHandler struct {
 }
 
 func NewIndexHandler() *IndexHandler {
-	tmpl, err := template.ParseGlob("./templates/*.go.html")
-	if err != nil {
-		log.Fatal(err.Error())
-	}
-	return &IndexHandler{Template: tmpl}
+	return &IndexHandler{Template: Tmpl}
 }
 
 func (h *IndexHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
