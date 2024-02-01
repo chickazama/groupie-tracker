@@ -1,7 +1,11 @@
 {{define "ArtistCard"}}
-<div class="card">
-    <h1>{{.Data.Name}}</h1>
-    <img class="profile-sm" src="{{.Data.Image}}" width="100" height="100" />
-    <a href="/artists/{{.Data.ID}}">View</a>
+<div class="col text-center">
+    <div class="card h-100 mb-2">
+    <img src="{{.Data.Image}}" class="card-img-top" alt="{{.Data.Name}}">
+        <div class="card-footer border-primary">
+            <!-- <h5 class="card-title">{{.Data.Name}}</h5> -->
+            <a href="/profile/{{.Data.ID}}" class="btn btn-primary">{{.Data.Name}}</a>
+        </div>
+    </div>
 </div>
 {{end}}

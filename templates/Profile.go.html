@@ -5,8 +5,11 @@
     <body>
         {{template "Navbar" .}}
         <main>
-            {{template "Artist" .}}
+            <div class="container">
+                {{template "Artist" .}}
+            </div>
         </main>
+        {{template "Scripts" .}}
     </body>
 </html>
 {{end}}
