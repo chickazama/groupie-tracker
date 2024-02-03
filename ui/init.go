@@ -4,6 +4,7 @@ import (
 	"html/template"
 	"log"
 	"matthewhope/groupie-tracker/services"
+	"os"
 )
 
 var (
@@ -13,7 +14,9 @@ var (
 
 func init() {
 	var err error
-	Tmpl, err = template.ParseGlob("./templates/*.go.html")
+	root := "./templates"
+	fsys := os.DirFS(root)
+	Tmpl, err = template.ParseFS(fsys, "*.go.html", "pages/*.go.html", "components/*.go.html")
 	if err != nil {
 		log.Fatal(err.Error())
 	}
